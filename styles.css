@@ -48,22 +48,13 @@ header h1 {
   border-left: 4px solid #d6bfa6;
 }
 
-.prompt-block pre {
-  white-space: pre-wrap;
-  font-family: "Courier New", monospace;
-  font-size: 0.9rem;
-}
-
-footer {
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: #666;
-}
+/* ✅ NEW: Copy button styling */
 .copy-btn {
   background-color: #e8e1d6;
   border: none;
   padding: 0.5rem 0.8rem;
   font-size: 0.9rem;
+  font-family: Georgia, "Times New Roman", serif;
   cursor: pointer;
   margin-bottom: 0.8rem;
 }
@@ -75,4 +66,17 @@ footer {
 .copy-btn:disabled {
   opacity: 0.7;
   cursor: default;
+}
+
+.prompt-block pre {
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #666;
 }

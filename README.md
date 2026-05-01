@@ -53,4 +53,3 @@ You are encouraged to:
 - Add personal context  
 - Let it evolve as your season of life changes  
 
-

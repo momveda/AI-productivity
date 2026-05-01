@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Claude Master Prompt for Work, Home & Motherhood</title>
-  <link rel="stylesheet" href="styles.css">
+  styles.css
 </head>
 <body>
 
@@ -19,12 +18,8 @@
     </header>
 
     <section class="intro">
-      <p>
-        You don’t need any technical knowledge to use this.
-      </p>
-      <p>
-        If you use Claude, you can simply copy the prompt below and paste it there.
-      </p>
+      <p>You don’t need any technical knowledge to use this.</p>
+      <p>If you use Claude, you can simply copy the prompt below and paste it there.</p>
     </section>
 
     <section class="how-to">
@@ -36,8 +31,11 @@
       </ol>
     </section>
 
+    <!-- ✅ Copy button added here -->
     <section class="prompt-block">
-      <pre>
+      <button class="copy-btn" onclick="copyPrompt()">Copy prompt</button>
+
+      <pre id="masterPrompt">
 You are my Life Operations Co‑Pilot.
 
 Your role is to help me balance three areas of my life:
@@ -67,12 +65,33 @@ Begin by asking:
 
     <footer>
       <p>
-        This is a living prompt.  
+        This is a living prompt.<br>
         Feel free to adapt it as your season of life changes.
       </p>
     </footer>
 
   </main>
+
+  <!-- ✅ Copy-to-clipboard logic -->
+  <script>
+    function copyPrompt() {
+      const promptText = document.getElementById("masterPrompt").innerText;
+      const button = document.querySelector(".copy-btn");
+
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = "Copied ✓";
+        button.disabled = true;
+
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.disabled = false;
+        }, 2000);
+      }).catch(() => {
+        alert("Copy failed. Please select the text manually.");
+      });
+    }
+  </script>
 
 </body>
 </html>
